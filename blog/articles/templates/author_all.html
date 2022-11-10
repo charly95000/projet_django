@@ -1,0 +1,17 @@
+{% load static %} {# Pour pouvoir utiliser les fichiers statics il faut charger la balise static #}
+
+<html>
+    <head>
+        <title>Les articles</title>
+        <link rel="stylesheet" href="{% static 'styles.css' %}" /> {# on indique a Django que le fichier se trouve dans le repertoir spécial static #}
+    </head>
+    <body>
+        <h1>Lss auteurs</h1>
+        <a href= "{% url 'author-add' %}">Ajouter un auteur</a>
+        <ul>
+        {% for author in authors %}
+            <li>{{author.firstname}} <a href={% url 'author-one' author.id %}>details</a></li>
+        {% endfor %}
+        </ul>
+    </body>
+</html>

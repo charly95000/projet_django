@@ -1,0 +1,15 @@
+{% load static %} {# Pour pouvoir utiliser les fichiers statics il faut charger la balise static #}
+
+<html>
+    <head>
+        <title>Les articles</title>
+        <link rel="stylesheet" href="{% static 'styles.css' %}" /> {# on indique a Django que le fichier se trouve dans le repertoir spécial static #}
+    </head>
+    <body>
+        <form action="" method="post" novalidate>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Envoyer">
+          </form>
+    </body>
+</html>
